@@ -50,27 +50,27 @@ jobs:
         name: myzip
         path: myzip
   
-  deploy:
-    name: deploy 
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:      
+#   deploy:
+#     name: deploy 
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     steps:      
     
-    - name: Download Build Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: myzip
-        path: myzip       
-        run: ls
+#     - name: Download Build Artifact
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: myzip
+#         path: myzip       
+#         run: ls
 
         
-    - name: Unzip 
-      run: |
-         unzip myzip .
+#     - name: Unzip 
+#       run: |
+#          unzip myzip .
       
-    - name: deploy to azure  
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+#     - name: deploy to azure  
+#       uses: azure/webapps-deploy@v2
+#       with:
+#         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+#         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+#         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
