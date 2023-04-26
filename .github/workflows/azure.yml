@@ -62,6 +62,10 @@ jobs:
       with:
         name: myzip
         path: .
+        
+    - name: find files
+      run: |
+        ls -la
 
 
         
