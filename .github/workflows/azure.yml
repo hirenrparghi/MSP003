@@ -48,7 +48,6 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: myzip
-        path: D:\a\MSP003\MSP003\
   
   deploy:
     name: deploy 
@@ -61,7 +60,6 @@ jobs:
       with:
         name: myzip
         run: ls
-        path: D:\a\MSP003\MSP003\
         
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
