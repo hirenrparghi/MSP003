@@ -65,7 +65,7 @@ jobs:
         
     - name: Unzip 
       run: |
-         tar -xf my.zip
+         Expand-Archive -Path . my.zip  
       
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
