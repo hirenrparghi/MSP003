@@ -55,16 +55,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:      
-    - name: find_file
-      working-directory: ${{ github.action_path }}
-      run: |
-        ls -la
+
         
     - name: Download Build Artifact
       uses: actions/upload-artifact@v3
       with:
         name: myzip
-        path: ${{ github.action_path }}
+        path: .
 
 
         
