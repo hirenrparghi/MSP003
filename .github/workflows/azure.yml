@@ -66,12 +66,10 @@ jobs:
     - name: find files
       run: |
         ls -la
-
-
         
-#     - name: Unzip 
-#       run: |
-#          unzip myzip .
+    - name: Unzip 
+      run: |
+         unzip myzip .
       
 #     - name: deploy to azure  
 #       uses: azure/webapps-deploy@v2
