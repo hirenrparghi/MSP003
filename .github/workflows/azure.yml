@@ -56,6 +56,7 @@ jobs:
     needs: [build]
     steps:      
     - name: find_file
+      working-directory: ${{ github.action_path }}
       run: |
         ls -la
         
