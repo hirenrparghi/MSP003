@@ -44,11 +44,11 @@ jobs:
          Compress-Archive -Path . my.zip         
          ls
                   
-#     - name: Upload a Build Artifact
-#       uses: actions/upload-artifact@v3.1.2
-#       with:
-#         name: myzip
-#         path: D:\a\MSP003\MSP003\*.zip
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: myzip
+        path: D:\a\MSP003\MSP003\
   
   deploy:
     name: deploy 
@@ -56,12 +56,12 @@ jobs:
     needs: [build]
     steps:      
     
-#     - name: Download Build Artifact
-#       uses: actions/upload-artifact@v3.1.2
-#       with:
-#         name: myzip
-#         run: ls
-#         path: .
+    - name: Download Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: myzip
+        run: ls
+        path: D:\a\MSP003\MSP003\
         
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
