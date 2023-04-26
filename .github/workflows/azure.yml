@@ -15,7 +15,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: Hirennodejs   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: 'D:\a\MSP003\MSP003\my.zip'  # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: 'D:\a\MSP003\MSP003\'  # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '12.x' # set this to the node version to use
 
 jobs:
@@ -50,11 +50,11 @@ jobs:
 #         name: myzip
 #         path: D:\a\MSP003\MSP003\*.zip
   
-#   deploy:
-#     name: deploy 
-#     runs-on: windows-latest
-#     needs: [build]
-#     steps:      
+  deploy:
+    name: deploy 
+    runs-on: windows-latest
+    needs: [build]
+    steps:      
     
 #     - name: Download Build Artifact
 #       uses: actions/upload-artifact@v3.1.2
