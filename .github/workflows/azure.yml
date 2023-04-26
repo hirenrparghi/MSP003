@@ -58,6 +58,7 @@ jobs:
       with:
         name: myzip
         run: ls
+        path: /etc/
         
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
