@@ -39,6 +39,7 @@ jobs:
 
         
     - name: archive file
+      shell: pwsh
       run: |
          ls
          Compress-Archive -Path . my.zip         
