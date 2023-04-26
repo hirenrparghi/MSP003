@@ -63,6 +63,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: myzip
+        path: ${{ github.action_path }}
 
 
         
