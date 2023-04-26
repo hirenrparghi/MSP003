@@ -19,9 +19,9 @@ env:
   NODE_VERSION: '12.x'                # set this to the node version to use
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
-    runs-on: ubuntu-latest
+  build:
+    name: Build 
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ env.NODE_VERSION }}
@@ -38,10 +38,16 @@ jobs:
         ls -la
     - name: archive file
       run: |
-         sudo apt-get install xarchiver -y 
-         zip -r output_file.zip .
          ls
-    - name: 'Deploy to Azure WebApp'
+         Compress-Archive -Path . my.zip         
+         ls
+  
+  deploy:
+    name: deploy 
+    runs-on: ubuntu-latest
+    steps:      
+      
+    - name: deploy to azure  
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
