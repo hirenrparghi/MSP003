@@ -39,7 +39,7 @@ jobs:
     - name: archive file
       run: |
          sudo apt-get install xarchiver -y 
-         compress-Archive -path .\ webapi.zip
+         zip -r output_file.zip .
          ls
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
