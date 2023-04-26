@@ -35,6 +35,11 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
+        ls -la
+    - name: archive file
+      run: |
+         compress-Archive -path .\ webapi.zip
+         ls
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
