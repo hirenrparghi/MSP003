@@ -48,7 +48,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: myzip
-        path: .
+        path: .\my.zip
   
   deploy:
     name: deploy 
@@ -60,7 +60,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: myzip
-        path: .
+        path: .\my.zip
         run: ls
 
         
