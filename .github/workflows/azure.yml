@@ -52,7 +52,7 @@ jobs:
   
   deploy:
     name: deploy 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: [build]
     steps:      
     
@@ -61,11 +61,11 @@ jobs:
       with:
         name: myzip
         run: ls
-        path: .
+
         
     - name: Unzip 
       run: |
-         Expand-Archive .
+         unzip my.zip
       
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
