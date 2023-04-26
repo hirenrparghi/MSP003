@@ -48,6 +48,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: myzip
+        path: .
   
   deploy:
     name: deploy 
@@ -59,7 +60,9 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: myzip
+        path: .
         run: ls
+
         
     - name: deploy to azure  
       uses: azure/webapps-deploy@v2
