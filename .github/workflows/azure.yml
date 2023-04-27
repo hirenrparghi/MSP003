@@ -38,38 +38,38 @@ jobs:
         npm run test --if-present
 
         
-#     - name: archive file
-#       run: |
-#          ls
-#          Compress-Archive -Path . my.zip         
-#          ls
+    - name: archive file
+      run: |
+         ls
+         Compress-Archive -Path . my.zip         
+         ls
                   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
         name: myzip
-        path: D:\a\MSP003\MSP003\
+        path: my.zip
   
-  deploy:
-    name: deploy 
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:      
+#   deploy:
+#     name: deploy 
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     steps:      
         
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.1.1
-      with:
-       name: myzip
-       path: .    
+#     - name: Download a Build Artifact
+#       uses: actions/download-artifact@v2.1.1
+#       with:
+#        name: myzip
+#        path: .    
         
-    - name: find files
-      run: |
-        ls -la
-        pwd
+#     - name: find files
+#       run: |
+#         ls -la
+#         pwd
       
-    - name: deploy to azure  
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+#     - name: deploy to azure  
+#       uses: azure/webapps-deploy@v2
+#       with:
+#         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+#         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+#         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
