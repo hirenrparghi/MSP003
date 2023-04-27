@@ -15,7 +15,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: Hirennodejs   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '/home/runner/work/MSP003/'  # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: '/home/runner/work/MSP003/MSP003/'  # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '12.x' # set this to the node version to use
 
 jobs:
@@ -69,7 +69,7 @@ jobs:
       run: |
         ls -la
         pwd
-        cd /home/runner/work/MSP003/MSP003/
+        cd /home/runner/work/MSP003/MSP003/MSP003/
         ls -la
       
     - name: deploy to azure  
