@@ -60,7 +60,10 @@ jobs:
       uses: actions/download-artifact@v2.1.1
       with:
        name: myzip
-       path: .    
+       path: . 
+       
+    - name: Unzip artifact for deployment
+      run: unzip my.zip
         
     - name: find files
       run: |
