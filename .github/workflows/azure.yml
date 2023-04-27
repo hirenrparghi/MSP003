@@ -69,7 +69,7 @@ jobs:
       run: |
         ls -la
         pwd
-        cd home/runner/work/MSP003/
+        cd /MSP003/
         ls -la
       
     - name: deploy to azure  
