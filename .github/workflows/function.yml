@@ -60,22 +60,24 @@ jobs:
       uses: actions/download-artifact@v2.1.1
       with:
        name: myzip
-       path: . 
+       path: .
+       run: |
+           ls -la
        
-    - name: Unzip artifact for deployment
-      run: unzip my.zip
+#     - name: Unzip artifact for deployment
+#       run: unzip my.zip
         
-    - name: find files
-      run: |
-        ls -la
-        pwd
-        cd /home/runner/work/MSP003/MSP003/MSP003/
-        ls -la
-        echo ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+#     - name: find files
+#       run: |
+#         ls -la
+#         pwd
+#         cd /home/runner/work/MSP003/MSP003/MSP003/
+#         ls -la
+#         echo ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
       
-    - name: deploy to azure  
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_FUN_APP_NAME }}
-        publish-profile: ${{ secrets.AZURE_FUN_APP_PUBLISH_PROFILE }}
-        package: ${{ env.AZURE_FUN_APP_PACKAGE_PATH }}
+#     - name: deploy to azure  
+#       uses: azure/webapps-deploy@v2
+#       with:
+#         app-name: ${{ env.AZURE_FUN_APP_NAME }}
+#         publish-profile: ${{ secrets.AZURE_FUN_APP_PUBLISH_PROFILE }}
+#         package: ${{ env.AZURE_FUN_APP_PACKAGE_PATH }}
