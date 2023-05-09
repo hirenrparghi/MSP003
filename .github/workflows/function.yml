@@ -60,7 +60,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
-      - run: cat /home/runner/.npm/_logs/2023-05-09T09_25_35_867Z-debug.log    
       - run: npm ci
       - run: npm publish
         env: 
