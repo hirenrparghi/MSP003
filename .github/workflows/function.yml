@@ -60,12 +60,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
-      - run: /home/runner/.npm/_logs/2023-05-09T09_25_35_867Z-debug.log    
+      - run: cat /home/runner/.npm/_logs/2023-05-09T09_25_35_867Z-debug.log    
       - run: npm ci
-      - run: npm login
       - run: npm publish
         env: 
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
   
   deploy:
     name: deploy 
