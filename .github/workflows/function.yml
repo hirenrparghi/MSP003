@@ -53,9 +53,9 @@ jobs:
     - name: Clean Workspace
       if: always()
       run: |
-       ls -ltra
+       ls -la
        rm -rf ./* ./.[^.] ./.??*
-       ls -ltra     
+       ls -la     
         
 #   publish:
 #     runs-on: ubuntu-latest
