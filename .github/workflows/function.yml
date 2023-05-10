@@ -41,7 +41,7 @@ jobs:
     - name: archive file
       run: |
          ls
-         Compress-Archive -Path . my.zip         
+         zip my.zip ./* -r         
          ls
                   
     - name: Upload a Build Artifact
